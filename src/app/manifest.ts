@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "K-Next",
-    short_name: "K-Next",
-    description: "K-Next – the open-source ad-free kdrama streaming site.",
+    name: "AJ-Watch",
+    short_name: "AJ-Watch",
+    description: "AK-Watch – the open-source ad-free kdrama streaming site.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

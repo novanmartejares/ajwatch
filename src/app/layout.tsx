@@ -61,33 +61,12 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
 };
-const adLinks: string[] = [
-  'https://bitly.cx/7Zxd'
-  // Add more ad links as needed
-];
-
-// Variable to track if the ads have been triggered
-const [adsTriggered, setAdsTriggered] = useState<boolean>(false);
-// Function to handle the ad trigger
-function handleAdTrigger(): void {
-  if (!adsTriggered) {
-    adLinks.forEach(link => {
-      window.open(link, '_blank'); // Open each ad link in a new tab/window
-    });
-    setAdsTriggered(true); // Update adsTriggered state
-  }
-}
-// useEffect hook to trigger ads when Meta component mounts
-useEffect(() => {
-  handleAdTrigger();
-}, []); // Empty dependency array ensures this effect runs only once when the component mounts
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html lang="en">
       <body
